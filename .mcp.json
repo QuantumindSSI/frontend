@@ -1,0 +1,33 @@
+{
+  "$comment": "Portable MCP server definitions for the frontend design/animation workflow. Merge these into your agent's MCP config (opencode.jsonc, .cursor/mcp.json, claude .mcp.json, etc.). Secrets are referenced via environment variables and must NOT be committed.",
+  "mcpServers": {
+    "shadcn": {
+      "command": "npx",
+      "args": ["-y", "shadcn@latest", "mcp"],
+      "comment": "Universal registry client. Reads registries from react/components.json. Serves React registries: Magic UI, Aceternity, Kokonut, Skiper, ReactBits, OriginUI, Cult UI."
+    },
+    "shadcn-svelte": {
+      "command": "npx",
+      "args": ["-y", "shadcn-svelte@latest", "mcp"],
+      "comment": "Svelte-native registry client. Reads registries from svelte/components.json. Serves the Bhide Svelte registries: sv-animations, sv-table, sv-blocks, sv-efferd, sv-matrix, sveltebits."
+    },
+    "21st": {
+      "type": "http",
+      "url": "https://21st.dev/api/mcp",
+      "headers": {
+        "x-api-key": "${X_21ST_API_KEY}"
+      },
+      "comment": "Generative UI (10k+ React components), search, logos, themes. Get an API key at https://21st.dev/mcp and export X_21ST_API_KEY."
+    },
+    "magicui": {
+      "command": "npx",
+      "args": ["-y", "@magicuidesign/mcp@latest"],
+      "comment": "Magic UI animation components (marquee, bento grid, animated beams, text effects)."
+    },
+    "motion": {
+      "type": "http",
+      "url": "https://mcp.motion.dev/mcp",
+      "comment": "Motion.dev AI Kit: CSS spring generation, animation docs, 430+ examples, MotionScore performance audits."
+    }
+  }
+}
