@@ -1,0 +1,24 @@
+{
+  "$schema": "https://shadcn-svelte.com/schema.json",
+  "tailwind": {
+    "css": "src/app.css",
+    "baseColor": "slate"
+  },
+  "aliases": {
+    "components": "$lib/components",
+    "utils": "$lib/utils",
+    "ui": "$lib/components/ui",
+    "hooks": "$lib/hooks",
+    "lib": "$lib"
+  },
+  "typescript": true,
+  "registry": "https://shadcn-svelte.com/registry",
+  "registries": {
+    "@sv-animations": "https://sv-animations.vercel.app/r/{name}.json",
+    "@sv-table": "https://sv-table.vercel.app/r/{name}.json",
+    "@sv-blocks": "https://sv-blocks.vercel.app/r/{name}.json",
+    "@sv-efferd": "https://sv-efferd.pages.dev/r/{name}.json",
+    "@sv-matrix": "https://sv-matrix.vercel.app/r/{name}.json",
+    "@sveltebits": "https://sveltebits.xyz/r/{name}.json"
+  }
+}
